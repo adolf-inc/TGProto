@@ -1,5 +1,6 @@
 [
     "fastnettools",
     "kanfing_proxyy",
-    "socksproxy"
+    "socksproxy",
+    "ProxyMTProto"
 ]

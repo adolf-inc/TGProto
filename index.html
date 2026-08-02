@@ -161,21 +161,28 @@
             gap: 8px;
             font-weight: bold;
             color: #ffffff;
+            min-width: 0; /* Для корректного урезания текста внутри flex */
         }
 
         .proxy-type-tag {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             padding: 2px 6px;
             border-radius: 4px;
             background-color: var(--border-color);
             color: #8b949e;
             white-space: nowrap;
             font-weight: normal;
+            max-width: 160px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .proxy-actions {
             display: flex;
             gap: 6px;
+            flex-shrink: 0;
         }
 
         .btn-sm {
@@ -303,44 +310,42 @@
                     return;
                 }
 
-                let html = `<div class="list-header"><span>Способ открытия:</span> <span>Всего: ${lines.length}</span></div>`;
+                let html = `<div class="list-header"><span>Сервер / IP:</span> <span>Всего: ${lines.length}</span></div>`;
 
                 lines.forEach((line, index) => {
                     let cleanLine = line.trim();
                     let directUrl = cleanLine;
                     let type = 'proxy';
-                    let displayType = 'MTProto';
+                    let serverHost = 'Unknown';
+
+                    // Парсим хост / IP из параметров
+                    const qIndex = cleanLine.indexOf('?');
+                    if (qIndex !== -1) {
+                        const params = new URLSearchParams(cleanLine.substring(qIndex + 1));
+                        serverHost = params.get('server') || 'Unknown';
+                    }
 
                     // Определяем тип и формируем прямой протокол tg://
                     if (cleanLine.includes('socks')) {
                         type = 'socks';
-                        displayType = 'SOCKS5';
                         if (cleanLine.startsWith('https://t.me/socks')) {
                             directUrl = cleanLine.replace('https://t.me/socks', 'tg://socks');
                         }
                     } else {
                         type = 'proxy';
-                        displayType = 'MTProto';
                         if (cleanLine.startsWith('https://t.me/proxy')) {
                             directUrl = cleanLine.replace('https://t.me/proxy', 'tg://proxy');
                         }
                     }
 
-                    // Выделяем параметры для построения Android Intent
-                    let queryString = '';
-                    const qIndex = directUrl.indexOf('?');
-                    if (qIndex !== -1) {
-                        queryString = directUrl.substring(qIndex + 1);
-                    }
-
-                    // Формируем принудительную ссылки через Android Intent
+                    const queryString = qIndex !== -1 ? cleanLine.substring(qIndex + 1) : '';
                     const intentUrl = `intent://${type}?${queryString}#Intent;scheme=tg;package=org.telegram.messenger;end;`;
 
                     html += `
                         <div class="proxy-item">
                             <div class="proxy-info">
                                 <span>#${index + 1}</span>
-                                <span class="proxy-type-tag">${displayType}</span>
+                                <span class="proxy-type-tag" title="${serverHost}">${serverHost}</span>
                             </div>
                             <div class="proxy-actions">
                                 <a href="${directUrl}" class="btn-sm btn-direct-sm">прямой</a>

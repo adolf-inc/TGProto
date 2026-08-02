@@ -3,321 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGProto — Proxy Copier & Links</title>
+    <title>TGProto Test Page</title>
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-blue: #2f81f7;
-            --accent-green: #238636;
-            --accent-purple: #8957e5;
-            --accent-orange: #d29922;
-            --border-color: #30363d;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            padding: 15px;
+            background-color: #f4f4f9;
+            color: #333;
         }
-
-        .container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            max-width: 520px;
-            width: 100%;
+        h2 {
             text-align: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-            margin-top: 20px;
-        }
-
-        h1 {
-            margin-top: 0;
-            font-size: 1.8rem;
-            color: #ffffff;
-        }
-
-        p {
-            color: #8b949e;
-            font-size: 0.9rem;
+            font-size: 20px;
             margin-bottom: 20px;
         }
-
-        .btn-row {
+        .proxy-list {
             display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-
-        .btn {
-            background-color: var(--accent-blue);
-            color: #ffffff;
-            border: none;
-            padding: 12px 14px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.1s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            flex: 1;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-
-        .btn-copy-main {
-            flex: 2;
-        }
-
-        .btn-list {
-            flex: 1;
-            background-color: var(--border-color);
-            color: #c9d1d9;
-        }
-
-        .btn-green {
-            background-color: var(--accent-green);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background-color: #238636;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 100;
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .counter {
-            font-size: 0.8rem;
-            opacity: 0.85;
-            font-weight: normal;
-        }
-
-        /* Список кликабельных прокси */
-        .proxy-list-container {
-            display: none;
-            margin-top: 16px;
-            text-align: left;
-            background-color: #0d1117;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px;
-            max-height: 350px;
-            overflow-y: auto;
-        }
-
-        .proxy-list-container.active {
-            display: block;
-        }
-
         .proxy-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 8px 10px;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            word-break: break-all;
-        }
-
-        .proxy-item:last-child {
-            border-bottom: none;
-        }
-
-        .proxy-link {
-            color: #58a6ff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .proxy-link:hover {
-            text-decoration: underline;
-        }
-
-        .proxy-type-tag {
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background-color: var(--border-color);
-            color: #8b949e;
-            margin-left: 8px;
-            white-space: nowrap;
-        }
-
-        .list-header {
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            display: flex;
             justify-content: space-between;
+            background: #ffffff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .proxy-num {
+            font-weight: bold;
+            font-size: 16px;
+            min-width: 35px;
+        }
+        .button-group {
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+        .btn-direct {
+            background-color: #0088cc;
+            color: #ffffff;
+        }
+        .btn-direct:active {
+            background-color: #006699;
+        }
+        .btn-intent {
+            background-color: #28a745;
+            color: #ffffff;
+        }
+        .btn-intent:active {
+            background-color: #1e7e34;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>TGProto</h1>
-        <p>Скопируйте списки прокси или выберите подходящий из списка для прямого подключения в Telegram.</p>
+    <h2>Тестирование подключения прокси</h2>
 
-        <!-- Блок Все Прокси -->
-        <div class="btn-row">
-            <button class="btn btn-copy-main" onclick="copyProxy('proxies.txt')">
-                📋 Скопировать все <span id="all-count" class="counter"></span>
-            </button>
-            <button class="btn btn-list" onclick="toggleList('proxies.txt', 'all-list-box')">
-                📜 Список
-            </button>
-        </div>
-
-        <div id="all-list-box" class="proxy-list-container"></div>
-
-        <!-- Блок Проверенные Прокси -->
-        <div class="btn-row" style="margin-top: 16px;">
-            <button class="btn btn-green btn-copy-main" onclick="copyProxy('proxies-tested.txt')">
-                ✅ Только проверенные <span id="tested-count" class="counter"></span>
-            </button>
-            <button class="btn btn-list" onclick="toggleList('proxies-tested.txt', 'tested-list-box')">
-                📜 Список
-            </button>
-        </div>
-
-        <div id="tested-list-box" class="proxy-list-container"></div>
+    <div class="proxy-list" id="proxyContainer">
+        <!-- Список будет сгенерирован скриптом -->
     </div>
 
-    <div id="toast" class="toast">Скопировано в буфер обмена!</div>
-
     <script>
-        const RAW_BASE_URL = 'https://raw.githubusercontent.com/adolf-inc/TGProto/main/';
+        // Массив с параметрами прокси для теста (замените своими данными)
+        const proxies = [
+            { server: "medblock.fit", port: "443", secret: "ee56f78c" },
+            { server: "proxy2.example.com", port: "443", secret: "dd123456" },
+            { server: "proxy3.example.com", port: "8080", secret: "ff987654" }
+        ];
 
-        async function fetchCount(filename, elementId) {
-            try {
-                const response = await fetch(RAW_BASE_URL + filename);
-                if (response.ok) {
-                    const text = await response.text();
-                    const lines = text.trim().split('\n').filter(line => line.trim().length > 0);
-                    document.getElementById(elementId).innerText = `(${lines.length})`;
-                }
-            } catch (e) {
-                console.error(e);
-            }
-        }
+        const container = document.getElementById("proxyContainer");
 
-        async function copyProxy(filename) {
-            try {
-                const response = await fetch(RAW_BASE_URL + filename);
-                if (!response.ok) throw new Error('Network error');
-                
-                const text = await response.text();
-                await navigator.clipboard.writeText(text);
-                
-                showToast();
-            } catch (err) {
-                alert('Не удалось скопировать. Попробуйте обновить страницу.');
-            }
-        }
-
-        async function toggleList(filename, containerId) {
-            const container = document.getElementById(containerId);
+        proxies.forEach((proxy, index) => {
+            const num = index + 1;
             
-            // Если уже открыт — закрываем
-            if (container.classList.contains('active')) {
-                container.classList.remove('active');
-                return;
-            }
+            // 1. Формируем прямую ссылку tg://
+            const directUrl = `tg://proxy?server=${encodeURIComponent(proxy.server)}&port=${encodeURIComponent(proxy.port)}&secret=${encodeURIComponent(proxy.secret)}`;
+            
+            // 2. Формируем Intent для Android
+            const intentUrl = `intent://proxy?server=${encodeURIComponent(proxy.server)}&port=${encodeURIComponent(proxy.port)}&secret=${encodeURIComponent(proxy.secret)}#Intent;scheme=tg;package=org.telegram.messenger;end;`;
 
-            // Закрываем другие открытые списки
-            document.querySelectorAll('.proxy-list-container').forEach(el => el.classList.remove('active'));
-
-            container.innerHTML = '<div style="text-align:center; color:#8b949e; padding:10px;">Загрузка списка...</div>';
-            container.classList.add('active');
-
-            try {
-                const response = await fetch(RAW_BASE_URL + filename);
-                if (!response.ok) throw new Error('Network error');
-                
-                const text = await response.text();
-                const lines = text.trim().split('\n').filter(line => line.trim().length > 0);
-
-                if (lines.length === 0) {
-                    container.innerHTML = '<div style="text-align:center; color:#8b949e;">Список пуст</div>';
-                    return;
-                }
-
-                let html = `<div class="list-header"><span>Нажмите для подключения:</span> <span>Всего: ${lines.length}</span></div>`;
-
-                lines.forEach((line, index) => {
-                    let cleanLine = line.trim();
-                    let connectUrl = cleanLine;
-                    let displayType = 'PROXY';
-
-                    // Преобразуем ссылки tg:// в https://t.me/proxy для лучшей совместимости с браузерами
-                    if (cleanLine.startsWith('tg://proxy')) {
-                        connectUrl = cleanLine.replace('tg://proxy', 'https://t.me/proxy');
-                        displayType = 'MTProto';
-                    } else if (cleanLine.startsWith('tg://socks')) {
-                        connectUrl = cleanLine.replace('tg://socks', 'https://t.me/socks');
-                        displayType = 'SOCKS5';
-                    }
-
-                    html += `
-                        <div class="proxy-item">
-                            <a href="${connectUrl}" target="_blank" class="proxy-link">#${index + 1} Подключить прокси</a>
-                            <span class="proxy-type-tag">${displayType}</span>
-                        </div>
-                    `;
-                });
-
-                container.innerHTML = html;
-
-            } catch (err) {
-                container.innerHTML = '<div style="text-align:center; color:#f85149;">Ошибка загрузки данных</div>';
-            }
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
-        }
-
-        // Подгружаем кол-во прокси при старте
-        fetchCount('proxies.txt', 'all-count');
-        fetchCount('proxies-tested.txt', 'tested-count');
+            const item = document.createElement("div");
+            item.className = "proxy-item";
+            item.innerHTML = `
+                <span class="proxy-num">#${num}</span>
+                <div class="button-group">
+                    <a class="btn btn-direct" href="${directUrl}">прямой</a>
+                    <a class="btn btn-intent" href="${intentUrl}">принудительный</a>
+                </div>
+            `;
+            container.appendChild(item);
+        });
     </script>
 </body>
 </html>

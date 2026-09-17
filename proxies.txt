@@ -41,7 +41,6 @@ https://t.me/proxy?server=as.mkim.click&port=443&secret=ee2dfa3526fc70b7abd7a09e
 https://t.me/proxy?server=at.foltmeingop.co.uk&port=8880&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=baran.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=bomberoo.shop&port=25565&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6d
-https://t.me/proxy?server=borooo.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=cdn10.cdnwave.org&port=443&secret=eeecd508d816f611bb329487809f8dac88706574726f766963682e7275
 https://t.me/proxy?server=cdn7.cdnwave.org&port=443&secret=ee6ec9f7e082baf2397b450727ce78447e6f7a6f6e2e7275
 https://t.me/proxy?server=cdn8.cdnwave.org&port=443&secret=eeaf794bcc20f70b1436b6b92b01b207e26d61676e69742e7275
@@ -72,7 +71,6 @@ https://t.me/proxy?server=media9.happtg.org&port=443&secret=ee2e7c3d85e469cb8f82
 https://t.me/proxy?server=miinecrafto.com&port=25565&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6d
 https://t.me/proxy?server=mimecraft4ir.homes&port=25565&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6d
 https://t.me/proxy?server=mio.mozitop.co.uk&port=8443&secret=eeNEgYdJvXrFGRMCIMJdCQ
-https://t.me/proxy?server=narooo.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=new2.lambforkebeb.co.uk&port=2096&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=nimagallery18.ir&port=25565&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6d
 https://t.me/proxy?server=perspolis.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09

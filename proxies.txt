@@ -9,6 +9,7 @@ https://t.me/proxy?server=195.254.165.20&port=8080&secret=dd79e7010200010007f003
 https://t.me/proxy?server=195.254.165.23&port=8443&secret=ee1603010200010001fc030386e24c3add646565707365656B2E636F6D
 https://t.me/proxy?server=195.254.165.25&port=8443&secret=ee1603010200010001fc030386e24c3add646565707365656B2E636F6D
 https://t.me/proxy?server=46.225.251.79&port=8443&secret=dd104462821249bd7ac519130220c25d09
+https://t.me/proxy?server=49.13.84.142&port=443&secret=YyEEgYdJXfrFmgMCIMJdjjRueWVrdGFuZXQ
 https://t.me/proxy?server=65.21.234.30&port=443&secret=3XnnAQIAAQAH8AMDhuJMOt0
 https://t.me/proxy?server=87.248.129.12&port=15&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6d
 https://t.me/proxy?server=87.248.129.13&port=15&secret=ee1603010200010001fc030386e24c3add63646e2e79656b74616e65742e636f6d
@@ -44,6 +45,7 @@ https://t.me/proxy?server=cdn6.cdnwave.org&port=443&secret=ee7391242569590e01416
 https://t.me/proxy?server=cdn7.cdnwave.org&port=443&secret=ee6ec9f7e082baf2397b450727ce78447e686f66662e7275
 https://t.me/proxy?server=dns.speed-benz.co.uk&port=8443&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=dns.vdl.lat&port=443&secret=eece59031f1109f05387b7155534c7ac87646e732e76646c2e6c6174
+https://t.me/proxy?server=dpi.Server-space52.info&port=443&secret=AAAAAAAAAAAAAAAAAAAAAA==
 https://t.me/proxy?server=e.networkmodeai.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=ghavi.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=goat.nisti.co.uk&port=8880&secret=79e344818749bd7ac519130220c25d09
@@ -86,3 +88,4 @@ https://t.me/proxy?server=ssh2.best-moz.info&port=22&secret=dd79e344818749bd7ac5
 https://t.me/proxy?server=ving.mozitop.co.uk&port=8443&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=white.antony-gordon.co.uk&port=2096&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=x.shmelproxy.top&port=443&secret=eefc2612ff65a557fddf1d1b334395ef237975672d6c696e6b2e7275
+https://t.me/proxy?server=zemestan.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09
